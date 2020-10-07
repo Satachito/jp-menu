@@ -1,0 +1,24 @@
+@import url( "./JPMenu.css" );
+
+/*	DESIGN SAMPLE	*/
+jp-menu > div {
+;	min-width			: 100%
+}
+jp-menu:hover > div {
+;	visibility			: visible
+;	top					: 100%
+;	left				: 0
+}
+.jp-menu-child {
+;	top					: 0
+;	left				: 100%
+;	border				: 1px solid black
+}
+.jp-menu-element {
+;	padding				: 8px
+;	background			: white
+;	white-space			: nowrap
+}
+.jp-menu-element:hover {
+;	background			: lightgrey
+}

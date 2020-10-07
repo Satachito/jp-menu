@@ -1,0 +1,77 @@
+<link rel="stylesheet" href=JPMenuSimple.css>
+
+<div style="display: inline-block; width: 100px; height: 100px; background: red"></div>
+
+<jp-menu
+	id=Menu1
+	json='[
+		[	"Sun"
+		,	[	"Mercury"
+			,	[	"Venus"
+				,	[ "2002 VE68" ]
+				]
+			,	[	"Earth"
+				,	[ "Moon" ]
+				]
+			,	[	"Mars"
+				,	[	"Phobos"
+					,	"Deimos"
+					]
+				]
+			,	[	"Jupiter"
+				,	[	"Io"
+					,	"Europa"
+					,	"Ganymede"
+					,	"Callisto"
+					]
+				]
+			]
+		]
+	,	"Sirius"
+	,	"Canopus"
+	,	"α Centauri"
+	,	"Arcturus"
+	]'
+>JP MENU SAMPLE</jp-menu><br>
+
+<div style="display: inline-block; width: 100px; height: 100px; background: red"></div>
+
+<script src=JPMenu.js></script>
+<script>
+const data = [
+	[	"Sun"
+	,	[	"Mercury"
+		,	[	"Venus"
+			,	[ "2002 VE68" ]
+			]
+		,	[	"Earth"
+			,	[ "Moon" ]
+			]
+		,	[	"Mars"
+			,	[	"Phobos"
+				,	"Deimos"
+				]
+			]
+		,	[	"Jupiter"
+			,	[	"Io"
+				,	"Europa"
+				,	"Ganymede"
+				,	"Callisto"
+				]
+			]
+		]
+	]
+,	"Sirius"
+,	"Canopus"
+,	"α Centauri"
+,	"Arcturus"
+]
+
+const
+menu2 = document.body.appendChild( new JPMenu( 'Menu2', data ) )
+menu2.id = 'Menu2'
+menu2.nodeCallback = menu2.leafCallback = ( text, path ) => menu2.firstChild.textContent = path + ':' + text
+
+</script>
+
+
