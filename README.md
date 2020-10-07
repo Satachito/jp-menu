@@ -9,7 +9,7 @@ See `index.html`
 in `<head>`
 
 ```
-<link rel="stylesheet" href=JPCascadeMenuSimple.css>
+<link rel="stylesheet" href=jp-menu-simple.css>
 ```
 
 ## Read `JS`
@@ -17,7 +17,7 @@ in `<head>`
 at the bottom of the `<body>`, before using it.
 
 ```
-<script src=JPCascadeMenu.js></script>
+<script src=jp-menu.js></script>
 ```
 
 ## Menu Data Strucure
@@ -45,7 +45,7 @@ Supply menu data to `'json'` attribute as `JSON` string.
 
 ```index.html
 
-<jp-cascade-menu
+<jp-menu
 	json='[
 		[	"Sun"
 		,	[	"Mercury"
@@ -74,7 +74,7 @@ Supply menu data to `'json'` attribute as `JSON` string.
 	,	"α Centauri"
 	,	"Arcturus"
 	]'
->Initial TEXT</jp-cascade-menu><br>
+>Initial TEXT</jp-menu><br>
 ```
 
 ## Dynamic
@@ -112,7 +112,7 @@ const data = [
 ]
 
 const
-menu2 = document.body.appendChild( new JPCascadeMenu( 'Menu2', data ) )
+menu2 = document.body.appendChild( new JPMenu( 'Menu2', data ) )
 menu2.id = 'Menu2'
 menu2.nodeCallback = menu2.leafCallback = ( text, path ) => menu2.firstChild.textContent = path + ':' + text
 
@@ -120,7 +120,7 @@ menu2.nodeCallback = menu2.leafCallback = ( text, path ) => menu2.firstChild.tex
 
 ## Callbacks
 
-JPCascadeMenu has two callbacks:
+JPMenu has two callbacks:
 
 * leafCallback
 * nodeCallback
@@ -134,6 +134,6 @@ Those defaults are setting selected menu to show up.
 
 ## Setting text
 
-JPCascadeMenu's first child is text node. 
+JPMenu's first child is text node. 
 
 Set text content of this text node shows given string.
