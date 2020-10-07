@@ -1,0 +1,23 @@
+{
+  "name": "@satachito/jp-menu",
+  "version": "1.0.0",
+  "description": "Menu WebComponent",
+  "main": "jp-menu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Satachito/jp-menu.git"
+  },
+  "keywords": [
+    "Menu",
+    "WebComponents"
+  ],
+  "author": "Satoru Ogura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Satachito/jp-menu/issues"
+  },
+  "homepage": "https://github.com/Satachito/jp-menu#readme"
+}
