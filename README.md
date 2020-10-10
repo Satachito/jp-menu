@@ -2,7 +2,7 @@
 
 ## Sample
 
-See `index.html`
+https://satachito.github.io/jp-menu/
 
 ## Read `CSS`
 
