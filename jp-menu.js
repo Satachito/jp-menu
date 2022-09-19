@@ -2,6 +2,7 @@ class
 JPMenu extends HTMLElement {
 	constructor( text, data ) {
 		super()
+		this.classList.add( 'jp-menu-element' )
 		text && this.appendChild( document.createTextNode( text ) )
 		this.div = this.appendChild( document.createElement( 'div' ) )
 		this.div.classList.add( 'jp-menu-child' )
@@ -13,20 +14,20 @@ JPMenu extends HTMLElement {
 		data.forEach(
 			( _, i ) => {
 				const newPath = path.concat( [ i ] )
-				const element = div.appendChild( document.createElement( 'div' ) )
-				element.classList.add( 'jp-menu-element' )
+				const $ = div.appendChild( document.createElement( 'div' ) )
+				$.classList.add( 'jp-menu-element' )
 				if ( Array.isArray( _ ) ) {
-					element.textContent = _[ 0 ]
-					element.onclick = ev => {
+					$.textContent = _[ 0 ]
+					$.onclick = ev => {
 						ev.stopPropagation()
 						this.nodeCallback( _[ 0 ], newPath )
 					}
-					element.div = element.appendChild( document.createElement( 'div' ) )
-					element.div.classList.add( 'jp-menu-child' )
-					this.FillDiv( element.div, _[ 1 ], newPath )
+					const div = $.appendChild( document.createElement( 'div' ) )
+					div.classList.add( 'jp-menu-child' )
+					this.FillDiv( div, _[ 1 ], newPath )
 				} else {
-					element.textContent = _
-					element.onclick = ev => {
+					$.textContent = _
+					$.onclick = ev => {
 						ev.stopPropagation()
 						this.leafCallback( _, newPath )
 					}

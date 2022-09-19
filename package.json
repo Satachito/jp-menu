@@ -1,6 +1,6 @@
 {
   "name": "@satachito/jp-menu",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Menu WebComponent",
   "main": "jp-menu.js",
   "scripts": {

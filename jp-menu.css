@@ -1,16 +1,13 @@
-/*	ESSENTIAL	*/
-jp-menu {
-;	position			: relative
+/*	ESSENTIAL		*/
+.jp-menu-element {
+;	position				: relative
 }
 .jp-menu-child {
-;	visibility			: hidden
-;	position			: absolute
-;	z-index				: 1
-}
-.jp-menu-element {
-;	position			: relative
+;	visibility				: hidden
+;	position				: absolute
+;	z-index					: 1
 }
 .jp-menu-element:hover > .jp-menu-child {
-;	visibility			: visible
+;	visibility				: visible
 }
 

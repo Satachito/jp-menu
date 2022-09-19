@@ -1,24 +1,17 @@
 @import url( "./jp-menu.css" );
 
-/*	DESIGN SAMPLE	*/
-jp-menu > div {
-;	min-width			: 100%
-}
-jp-menu:hover > div {
-;	visibility			: visible
-;	top					: 100%
-;	left				: 0
-}
+/*	SIMPLE LAYOUT	*/
 .jp-menu-child {
-;	top					: 0
-;	left				: 100%
-;	border				: 1px solid black
+;	top						: -1px
+;	left					: 100% 
+;	border					: 1px solid black
 }
 .jp-menu-element {
-;	padding				: 8px
-;	background			: white
-;	white-space			: nowrap
+;	background				: white
+;	white-space				: nowrap
+;	padding					: 0 8px
 }
 .jp-menu-element:hover {
-;	background			: lightgrey
+;	background				: lightgray
 }
+

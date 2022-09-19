@@ -1,7 +1,5 @@
 <link rel="stylesheet" href=jp-menu-simple.css>
 
-<div style="display: inline-block; width: 100px; height: 100px; background: red"></div>
-
 <jp-menu
 	id=Menu1
 	json='[
@@ -32,11 +30,10 @@
 	,	"α Centauri"
 	,	"Arcturus"
 	]'
->JP MENU SAMPLE</jp-menu><br>
-
-<div style="display: inline-block; width: 100px; height: 100px; background: red"></div>
+>Hover ME</jp-menu><br>
 
 <script src=jp-menu.js></script>
+
 <script>
 const data = [
 	[	"Sun"
@@ -68,7 +65,7 @@ const data = [
 ]
 
 const
-menu2 = document.body.appendChild( new JPMenu( 'Menu2', data ) )
+menu2 = document.body.appendChild( new JPMenu( 'Hover ME too.', data ) )
 menu2.id = 'Menu2'
 menu2.nodeCallback = menu2.leafCallback = ( text, path ) => menu2.firstChild.textContent = path + ':' + text
 
