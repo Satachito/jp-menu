@@ -3,11 +3,11 @@
 ;	position				: relative
 }
 .jp-menu-child {
-;	visibility				: hidden
+;	display					: none
 ;	position				: absolute
 ;	z-index					: 1
 }
 .jp-menu-element:hover > .jp-menu-child {
-;	visibility				: visible
+;	display					: block
 }
 

@@ -4,17 +4,20 @@ JPMenu extends HTMLElement {
 		super()
 		this.classList.add( 'jp-menu-element' )
 		text && this.appendChild( document.createTextNode( text ) )
-		this.div = this.appendChild( document.createElement( 'div' ) )
-		this.div.classList.add( 'jp-menu-child' )
-		data && this.FillDiv( this.div, data )
+		data && this.Fill( data )
 		this.nodeCallback = _ => this.firstChild.textContent = _
 		this.leafCallback = _ => this.firstChild.textContent = _
 	}
-	FillDiv( div, data, path = [] ) {
+	Fill( data, parent = this, path = [] ) {
+
+		const
+		child = parent.appendChild( document.createElement( 'div' ) )
+		child.classList.add( 'jp-menu-child' )
+		data.every( _ => !Array.isArray( _ ) ) && child.classList.add( 'jp-menu-scrollable' )
 		data.forEach(
 			( _, i ) => {
 				const newPath = path.concat( [ i ] )
-				const $ = div.appendChild( document.createElement( 'div' ) )
+				const $ = child.appendChild( document.createElement( 'div' ) )
 				$.classList.add( 'jp-menu-element' )
 				if ( Array.isArray( _ ) ) {
 					$.textContent = _[ 0 ]
@@ -22,9 +25,7 @@ JPMenu extends HTMLElement {
 						ev.stopPropagation()
 						this.nodeCallback( _[ 0 ], newPath )
 					}
-					const div = $.appendChild( document.createElement( 'div' ) )
-					div.classList.add( 'jp-menu-child' )
-					this.FillDiv( div, _[ 1 ], newPath )
+					this.Fill( _[ 1 ], $, newPath )
 				} else {
 					$.textContent = _
 					$.onclick = ev => {
@@ -40,7 +41,7 @@ JPMenu extends HTMLElement {
 	attributeChangedCallback( name, o, n ) {
 		switch ( name ) {
 		case 'json':
-			this.FillDiv( this.div, JSON.parse( n ) )
+			this.Fill( JSON.parse( n ) )
 			break
 		}
 	}

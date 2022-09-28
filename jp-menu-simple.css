@@ -5,6 +5,7 @@
 ;	top						: -1px
 ;	left					: 100% 
 ;	border					: 1px solid black
+;	max-height				: 300px
 }
 .jp-menu-element {
 ;	background				: white
@@ -13,5 +14,8 @@
 }
 .jp-menu-element:hover {
 ;	background				: lightgray
+}
+.jp-menu-scrollable {
+;	overflow				: scroll
 }
 
