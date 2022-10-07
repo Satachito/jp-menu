@@ -9,7 +9,6 @@ JPMenu extends HTMLElement {
 		this.leafCallback = _ => this.firstChild.textContent = _
 	}
 	Fill( data, parent = this, path = [] ) {
-
 		const
 		child = parent.appendChild( document.createElement( 'div' ) )
 		child.classList.add( 'jp-menu-child' )
@@ -19,20 +18,20 @@ JPMenu extends HTMLElement {
 				const newPath = path.concat( [ i ] )
 				const $ = child.appendChild( document.createElement( 'div' ) )
 				$.classList.add( 'jp-menu-element' )
-				if ( Array.isArray( _ ) ) {
-					$.textContent = _[ 0 ]
-					$.onclick = ev => {
-						ev.stopPropagation()
-						this.nodeCallback( _[ 0 ], newPath )
-					}
-					this.Fill( _[ 1 ], $, newPath )
-				} else {
-					$.textContent = _
-					$.onclick = ev => {
-						ev.stopPropagation()
-						this.leafCallback( _, newPath )
-					}
-				}
+				Array.isArray( _ )
+				?	(	$.textContent = _[ 0 ]
+					,	$.onclick = ev => (
+							ev.stopPropagation()
+						,	this.nodeCallback( _[ 0 ], newPath )
+						)
+					,	this.Fill( _[ 1 ], $, newPath )
+					)
+				:	(	$.textContent = _
+					,	$.onclick = ev => (
+							ev.stopPropagation()
+						,	this.leafCallback( _, newPath )
+						)
+					)
 			}
 		)
 	}
